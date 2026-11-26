@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Node / app
+app/node_modules/
+app/dist/
+app/dist-pendrive/
+
+# Sistema
+.DS_Store
+Thumbs.db
