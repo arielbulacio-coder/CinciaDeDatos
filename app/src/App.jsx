@@ -53,8 +53,9 @@ function Topbar({ ruta }) {
     <header className="topbar">
       <div className="topbar-in">
         <a className="marca" href="#/">
-          <img src="./icon.svg" alt="" />
-          <span><b>Python para Ciencia de Datos</b><small>UADE · Lic. en IA y Ciencia de Datos</small></span>
+          <img className="logo-uade" src="./logo-uade-blanco.png" alt="UADE · Universidad Argentina de la Empresa" />
+          <span className="marca-sep" aria-hidden="true" />
+          <span><b>Python para Ciencia de Datos</b><small>Lic. en Inteligencia Artificial y Ciencia de Datos</small></span>
         </a>
         {!online && <span className="offline-chip">Sin conexión · modo offline</span>}
         <nav>

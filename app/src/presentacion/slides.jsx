@@ -1,4 +1,4 @@
-// Las 17 diapositivas de la Clase 10. Cada una declara:
+// Las 16 diapositivas de la Clase 10. Cada una declara:
 //   min:    minuto de inicio planificado (para el cronómetro del orador)
 //   notas:  guion para el docente (se ven en la ventana del orador)
 //   pasos:  cantidad de clics de revelado antes de pasar a la siguiente
@@ -17,7 +17,16 @@ const EDAD_L = col("edad_jefe", LIMPIO);
 const cuenta = (mask) => mask.filter(Boolean).length;
 
 function Pie({ texto }) {
-  return <div className="s-pie"><span>{texto}</span><span className="s-num" /></div>;
+  return (
+    <div className="s-pie">
+      <span>{texto}</span>
+      <span className="s-pie-der">
+        <img className="s-logo-claro" src="./logo-uade-negro.png" alt="UADE" />
+        <img className="s-logo-oscuro" src="./logo-uade-blanco.png" alt="UADE" />
+        <span className="s-num" />
+      </span>
+    </div>
+  );
 }
 
 function Seg({ opciones, valor, onChange }) {
@@ -35,6 +44,7 @@ function Portada() {
   const tx = useTextos();
   return (
     <div className="s-col s-centro">
+      <img src="./logo-uade-blanco.png" alt="UADE · Universidad Argentina de la Empresa" style={{ height: 110, width: "auto", alignSelf: "flex-start", marginBottom: 24 }} />
       <p className="s-eyebrow">Python para Ciencia de Datos · Unidad 4 · Clase 10</p>
       <h1 className="s-h1">¿Error o hallazgo?</h1>
       <p className="s-lead" style={{ fontSize: 44, maxWidth: 1500, color: "#E9EDF1" }}>
@@ -507,32 +517,6 @@ function Proxima() {
   );
 }
 
-/* ---------------- 17 · Anexo ---------------- */
-function Anexo() {
-  const tx = useTextos();
-  const filas = [
-    ["Disparador", "Aprendizaje basado en problemas", tx.encuesta, "Diagnóstica"],
-    ["Detectar", "Exposición dialogada, descubrimiento", "Gráficos interactivos", "Preguntas de control"],
-    ["Decidir", "Estudio de casos", "Votación con revelado", "Formativa inmediata"],
-    ["Transformar", "Por imitación (live coding)", "Google Colab", "Preguntas de control"],
-    ["Práctica", "Colaborativo, por proyectos", "Grupos de 3, notebook", "Producto + asserts"],
-    ["Cierre", "Metacognición", "Ticket de salida, re-votación", "Formativa"],
-    ["Tarea", "Aula invertida, vivencial", "Microdatos EPH (INDEC)", "Insumo para la Clase 11"],
-  ];
-  return (
-    <div className="s-col">
-      <p className="s-eyebrow">Anexo · Para el tribunal</p>
-      <h2 className="s-h2">Decisiones didácticas de la clase</h2>
-      <table className="s-tabla" style={{ fontSize: 26 }}>
-        <thead><tr><th>Momento</th><th>Estrategia (programa)</th><th>{tx.recurso}</th><th>Evaluación</th></tr></thead>
-        <tbody>{filas.map((f) => <tr key={f[0]}>{f.map((c, i) => <td key={i}>{c}</td>)}</tr>)}</tbody>
-      </table>
-      <p className="s-small">Unidad 4 del programa 3.4.258 (CF FAIN Nº 534) · Un mismo dataset de punta a punta para bajar la carga cognitiva y centrarse en las decisiones</p>
-      <Pie texto="UADE · Python para Ciencia de Datos · Clase 10" />
-    </div>
-  );
-}
-
 export const SLIDES = [
   { id: "portada", titulo: "Portada", oscura: true, min: 0, Comp: Portada,
     notas: "Bienvenida (20 s). Me presento y ubico la clase: Unidad 4, EDA, segunda clase de la unidad. Ya vimos describe(), groupby y tablas dinámicas. Hoy damos el paso que separa a quien “mira” los datos de quien decide qué hacer con ellos. Pido cámaras encendidas si es posible y el chat abierto." },
@@ -561,11 +545,9 @@ export const SLIDES = [
   { id: "nuevas-vars", titulo: "Crear variables", min: 16, Comp: NuevasVars,
     notas: "Integración en cuatro líneas. Pregunta: “¿Es más rico un hogar de 1 persona con $1,5 M o uno de 6 con $2,5 M?”. El per cápita responde mejor. La flag es la forma profesional de tratar el caso dudoso. Estas variables viajan a scikit-learn en la Unidad 5." },
   { id: "manos-codigo", titulo: "Manos al código", oscura: true, min: 17, Comp: ManosCodigo,
-    notas: "En la clase real: 15–20 min en salas de 3 con roles (escribe, explica, controla el tiempo). En la simulación: abro el notebook en Colab y ejecuto el Reto 1 en vivo (dos celdas). El notebook es autocontenido: genera los datos solo. Al final tiene asserts de autoevaluación." },
+    notas: "Con la clase completa: 15–20 min en grupos de 3 con roles (escribe, explica, controla el tiempo); recorro los grupos. En una exposición breve: abro el notebook en Colab y ejecuto el Reto 1 en vivo (dos celdas). El notebook es autocontenido: genera los datos solo. Al final tiene asserts de autoevaluación." },
   { id: "cierre", titulo: "Cierre", min: 18, Comp: Cierre,
     notas: "Síntesis primero a cargo de un estudiante (metacognición). Segunda votación del caso #57: espero un corrimiento de A hacia D, evidencia visible de aprendizaje. Ticket de salida: exige explicar el enmascaramiento, no recordar una fórmula. Lo uso para planificar la Clase 11." },
   { id: "proxima", titulo: "Tarea y próxima clase", alt: true, min: 19.2, Comp: Proxima,
     notas: "Transferencia a datos reales de la EPH: aparecen códigos como -9 o 999 y extremos verdaderos. La lectura es la bibliografía obligatoria. Anticipo: los scalers de scikit-learn se ajustan SOLO con el set de entrenamiento (data leakage). Agradezco y abro preguntas." },
-  { id: "anexo", titulo: "Anexo didáctico", min: 20, Comp: Anexo,
-    notas: "Respaldo para preguntas del tribunal. Todas las estrategias vienen de la sección III del programa. Ideas: (1) un dataset de punta a punta baja la carga cognitiva; (2) el conflicto cognitivo motiva los métodos robustos; (3) evaluación formativa continua alineada a los objetivos; (4) transferencia a datos reales; (5) asserts y pytest integran la Unidad 6." },
 ];

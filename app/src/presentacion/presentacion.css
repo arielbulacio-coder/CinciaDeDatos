@@ -163,3 +163,11 @@
 }
 .orador-botones button.principal { background: #f7a700; color: #061b2c; border-color: #f7a700; font-size: 18px; }
 @media (max-width: 800px) { .orador-cuerpo { grid-template-columns: 1fr; } }
+
+/* Logo UADE en el pie de cada diapositiva */
+.s-pie { align-items: center; }
+.s-pie-der { display: flex; align-items: center; gap: 28px; }
+.s-pie img { height: 40px; width: auto; }
+.s-logo-oscuro { display: none; }
+.oscura .s-logo-claro { display: none; }
+.oscura .s-logo-oscuro { display: inline; }

@@ -4,19 +4,19 @@ Curso virtual de la asignatura **Python para Ciencia de Datos (3.4.258)**, Licen
 Artificial y Ciencia de Datos, Facultad de Ingeniería y Ciencias Exactas (UADE).
 Prof. Lic. Ariel Bulacio.
 
-La **Clase 10** (Unidad 4 – EDA: atípicos, distribuciones y transformaciones) está desarrollada completa
-para la prueba de oposición: presentación de 20 minutos, laboratorio interactivo, notebooks de Colab y plan docente.
+La **Clase 10** (Unidad 4 – EDA: atípicos, distribuciones y transformaciones) está desarrollada completa:
+presentación interactiva, laboratorio, notebooks de Colab, autoevaluación y guía de estudio.
 
 **Sitio publicado:** https://arielbulacio-coder.github.io/CinciaDeDatos/
 (se actualiza solo con cada `push` a `main`, mediante `.github/workflows/pages.yml`).
-La versión pendrive se descarga desde el sitio: `clase10-pendrive.zip`.
+La versión sin conexión se descarga desde el sitio: `clase10-offline.zip`.
 
 ## Contenido del repositorio
 
 ```
 app/                                React + Vite, PWA instalable y offline
-  src/presentacion/                 17 diapositivas con gráficos en vivo, ventana del orador, votación
-  src/pages/                        Curso, Laboratorio, Práctica y Colab, Plan docente
+  src/presentacion/                 16 diapositivas con gráficos en vivo, ventana del orador, votación
+  src/pages/                        Curso, Laboratorio, Práctica y Colab, Guía de estudio
   src/lib/stats.js                  Estadística en JS (mismos resultados que pandas, con tests)
 clase-10-outliers-transformaciones/
   src/generar_datos.py              Dataset simulado (500 hogares, estructura EPH) reproducible
@@ -48,7 +48,7 @@ npm run preview          # sirve dist/ en http://localhost:4173
 4. `T` inicia el cronómetro. Los botones de cada diapositiva (con/sin hogar #57, k = 1,5/3, log, escalados, cut/qcut)
    se usan con el mouse.
 
-### Para el pendrive
+### Versión sin conexión
 
 Copiar la carpeta `app/dist-pendrive/` completa (incluye los notebooks). Se abre `index.html` con doble clic,
 sin internet ni servidor. Las tipografías caen a las del sistema si no hay conexión.

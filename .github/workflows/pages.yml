@@ -31,9 +31,9 @@ jobs:
       - run: npm test
       - run: npm run build
       - run: npm run build:pendrive
-      - name: Incluir la versión pendrive como descarga
+      - name: Incluir la versión sin conexión como descarga
         run: |
-          cd dist-pendrive && zip -r ../dist/clase10-pendrive.zip . && cd ..
+          cd dist-pendrive && zip -r ../dist/clase10-offline.zip . && cd ..
       - uses: actions/upload-pages-artifact@v3
         with:
           path: app/dist
